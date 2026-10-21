@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Rindfleisch Hof Geyer | Hofverkauf Alsfeld-Reibertenrod</title>
+    
+    <!-- PWA Primary Meta Tags -->
+    <meta name="theme-color" content="#5b3286">
+    <meta name="description" content="Regionales Bio-Rindfleisch direkt vom Hof Geyer aus Alsfeld-Reibertenrod im Vogelsberg. Artgerechte Haltung, verschiedene Mischpakete & höchste Qualität. Jetzt vorbestellen!">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Bio-Rind Geyer">
+    
+    <!-- Tailwind CSS & Lucide Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration - Milka Style Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        milka: {
+                            50: '#f6f0fb',
+                            100: '#eddff6',
+                            200: '#dcbfed',
+                            500: '#894dbd',
+                            600: '#6b369c',
+                            700: '#5b3286',
+                            800: '#48276c',
+                            900: '#341a50',
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#f7f2e9',
+                            200: '#efe5d4',
+                            800: '#5c4e3e'
+                        },
+                        accent: {
+                            500: '#e5a93c',
+                            600: '#cf9023'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient {
+            background: linear-gradient(rgba(45, 20, 70, 0.75), rgba(30, 10, 50, 0.85)), url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .milka-badge {
+            background: linear-gradient(135deg, #7b3fb8, #48276c);
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-milka-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-milka-700 text-white p-2.5 rounded-2xl shadow-md shadow-milka-700/20">
+                    <i data-lucide="beef" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold text-milka-900 block leading-none">Hof Geyer</span>
+                    <span class="text-xs text-milka-600 font-semibold tracking-wide">Bio-Rindfleisch • Reibertenrod</span>
+                </div>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center gap-6 font-medium text-gray-700">
+                <a href="#vorteile" class="hover:text-milka-600 transition-colors">Qualität</a>
+                <a href="#pakete" class="hover:text-milka-600 transition-colors">Mischpakete</a>
+                <a href="#ueber-uns" class="hover:text-milka-600 transition-colors">Über Hof Geyer</a>
+                <a href="#kontakt" class="bg-milka-700 hover:bg-milka-800 text-white px-5 py-2.5 rounded-xl transition-all shadow-md shadow-milka-700/20 flex items-center gap-2 font-semibold">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Vorbestellen
+                </a>
+            </nav>
+
+            <!-- Mobile Action -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="pwaInstallBtn" onclick="installPWA()" class="hidden bg-milka-100 text-milka-800 px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1">
+                    <i data-lucide="download" class="w-4 h-4"></i> App
+                </button>
+                <a href="#kontakt" class="bg-milka-700 text-white p-2.5 rounded-xl">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="hero-gradient text-white py-20 md:py-32 px-4 text-center relative overflow-hidden">
+            <div class="max-w-3xl mx-auto space-y-6 relative z-10">
+                <span class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md text-milka-100 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold tracking-wide uppercase border border-white/20">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-accent-500"></i> Alsfeld-Reibertenrod • Vogelsberg
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Bio-Rindfleisch von Familie Geyer
+                </h1>
+                <p class="text-lg md:text-xl text-milka-100 max-w-2xl mx-auto font-normal">
+                    Saftiges Grünland, artgerechte Mutterkuhhaltung & nachhaltige Bio-Landwirtschaft. Erstklassiger Geschmack direkt ab Hof in Reibertenrod.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#pakete" class="bg-accent-500 hover:bg-accent-600 text-milka-900 px-8 py-3.5 rounded-xl text-lg font-bold shadow-lg shadow-accent-500/20 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="package" class="w-5 h-5"></i> Pakete entdecken
+                    </a>
+                    <a href="#kontakt" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-3.5 rounded-xl text-lg font-semibold transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i> Unverbindlich anfragen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="vorteile" class="py-16 px-4 bg-white border-b border-cream-200">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-milka-900">Qualität von Hof Geyer</h2>
+                    <p class="text-gray-600 mt-2">Gute Tierhaltung, Transparenz und echtes Handwerk stehen bei uns an erster Stelle.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-milka-50/60 p-6 rounded-2xl border border-milka-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-milka-700 text-white rounded-xl flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="sprout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-milka-900 mb-2">100% Bio & Weidehaltung</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Unsere Rinder wachsen im Vogelsberg auf weitläufigen Weiden naturnah und stressfrei auf.</p>
+                    </div>
+
+                    <div class="bg-milka-50/60 p-6 rounded-2xl border border-milka-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-milka-700 text-white rounded-xl flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-milka-900 mb-2">Kurze Wege & Respekt</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Keine stundenlangen Tiertransporte. Schlachtung regional und schonend für höchste Qualität.</p>
+                    </div>
+
+                    <div class="bg-milka-50/60 p-6 rounded-2xl border border-milka-100 hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-milka-700 text-white rounded-xl flex items-center justify-center mb-4 shadow-sm">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-milka-900 mb-2">Perfekte Reifung</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Fachgerecht abgehangenes Fleisch für feine Marmorierung, Zartheit und intensiven Geschmack.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pakete" class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-milka-600 font-bold text-xs uppercase tracking-wider bg-milka-100 px-3 py-1 rounded-full">Hofverkauf Reibertenrod</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-milka-900 mt-3">Unsere Bio-Mischpakete</h2>
+                <p class="text-gray-600 mt-2">Frisch vakuumverpackt, küchenfertig beschriftet – ideal zum Einfrieren oder direkt Genießen.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Paket 1: Probiertüte -->
+                <div class="bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm flex flex-col hover:border-milka-500 transition-all">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Probierpaket 3 kg</h3>
+                            <span class="bg-milka-100 text-milka-800 text-xs font-bold px-2.5 py-1 rounded-md">Für Einsteiger</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Ideal für kleinere Haushalte oder zum Kennenlernen unseres Bio-Fleischs.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> ca. 1 kg Hackfleisch</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> ca. 1 kg Gulasch / Braten</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> ca. 1 kg Rumpsteak / Steaks</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Kompakt</span>
+                            <span class="text-lg font-bold text-milka-900">ca. 3 kg</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Probierpaket 3kg')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Wählen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 2: Standard 5kg -->
+                <div class="bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm flex flex-col hover:border-milka-500 transition-all">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Mischpaket 5 kg</h3>
+                            <span class="bg-milka-100 text-milka-800 text-xs font-bold px-2.5 py-1 rounded-md">Der Klassiker</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Ausgewogene Mischung für Sonntagsbraten, schnelle Küche und Steaks.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Rinderbraten & Rouladen</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Zartes Gulasch</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Saftiges Hackfleisch</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Rumpsteak / Hüftsteak</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Suppenfleisch / Beinscheibe</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Beliebt</span>
+                            <span class="text-lg font-bold text-milka-900">ca. 5 kg</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Mischpaket 5kg')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Wählen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 3: Familienteil 10kg (Bestseller) -->
+                <div class="bg-white rounded-2xl border-2 border-milka-600 overflow-hidden shadow-md flex flex-col relative">
+                    <div class="bg-milka-700 text-white text-xs font-bold text-center py-1.5 tracking-wider uppercase">
+                        Bestseller für Familien
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Familienpaket 10 kg</h3>
+                            <span class="bg-accent-500 text-milka-900 text-xs font-extrabold px-2.5 py-1 rounded-md">Empfehlung</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Das Rundum-Sorglos-Paket mit bester Sortierung für den Vorrat.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Edle Steaks (Entrecôte, Rumpsteak)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-lucide-check text-milka-600"></i> Zarter Braten & Omas Rouladen</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Reichlich Gulasch & Hackfleisch</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Suppenknochen & Beinscheiben</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Vorrats-Paket</span>
+                            <span class="text-lg font-bold text-milka-900">ca. 10 kg</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Familienpaket 10kg')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Wählen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 4: Gourmet / Steakpaket -->
+                <div class="bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm flex flex-col hover:border-milka-500 transition-all">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Gourmet Steak-Paket</h3>
+                            <span class="bg-milka-100 text-milka-800 text-xs font-bold px-2.5 py-1 rounded-md">Grill & Pfanne</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Spezielle Auswahl für Steak-Liebhaber und Genießer edler Teilstücke.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Filetsteaks</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Rumpsteaks & Rib-Eye</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Hüftsteaks</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Bio-Burger Patties (gewürzt)</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Edelteile</span>
+                            <span class="text-lg font-bold text-milka-900">ca. 4 kg</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Gourmet Steak-Paket')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Wählen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 5: Suppen & Schmortopf -->
+                <div class="bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm flex flex-col hover:border-milka-500 transition-all">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Schmor & Suppen-Paket</h3>
+                            <span class="bg-milka-100 text-milka-800 text-xs font-bold px-2.5 py-1 rounded-md">Deftig</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Perfekt für Kräftige Brühen, Eintöpfe, Rinderbacken und Schmorgerichte.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Ochsenschwanz & Beinscheiben</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Suppenfleisch mit Knochen</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Brust & Hohe Rippe</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Wertvolle Bio-Markknochen</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Spezialität</span>
+                            <span class="text-lg font-bold text-milka-900">ca. 6 kg</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Schmor- & Suppenpaket')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Wählen
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paket 6: Individuell -->
+                <div class="bg-white rounded-2xl border border-cream-200 overflow-hidden shadow-sm flex flex-col hover:border-milka-500 transition-all">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-milka-900">Sonderwünsche</h3>
+                            <span class="bg-cream-200 text-cream-800 text-xs font-bold px-2.5 py-1 rounded-md">Flexibel</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm">Einzelne Teilstücke, Innereien oder spezielle Zuschnitte nach Rücksprache.</p>
+                        <ul class="space-y-2.5 text-sm text-gray-700 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Ganze Filets oder Bratenstücke</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Zunge, Leber & Innereien</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-milka-600"></i> Mengen nach Absprache</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-cream-100/60 border-t border-cream-200 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block">Nach Wunsch</span>
+                            <span class="text-lg font-bold text-milka-900">Individuell</span>
+                        </div>
+                        <a href="#kontakt" onclick="selectPackage('Sonderwunsch / Einzelteile')" class="bg-milka-700 hover:bg-milka-800 text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">
+                            Anfragen
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="ueber-uns" class="py-16 bg-white border-y border-cream-200">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <span class="text-milka-600 font-bold text-xs uppercase tracking-wider bg-milka-50 px-3 py-1 rounded-full border border-milka-100">Familie Geyer • Reibertenrod</span>
+                    <h2 class="text-3xl font-extrabold text-milka-900">Landwirtschaft aus Leidenschaft im Vogelsberg</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Unser Hof der Familie Geyer liegt mitten im malerischen Ortsteil Alsfeld-Reibertenrod. Auf unseren artenreichen Weiden erzeugen wir Bio-Rindfleisch im Einklang mit der Natur und mit tiefem Respekt vor unseren Tieren.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Durch artgerechte Mutterkuhhaltung, bestes Futter von eigenen Feldern und reichlich Auslauf garantieren wir gesunde, kräftige Tiere und beste Fleischqualität für die Region.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4 text-milka-900 font-semibold text-sm">
+                        <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-milka-600"></i> Direkt vom Erzeuger</div>
+                        <div class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="text-milka-600"></i> Hofabholung in Reibertenrod</div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1546445317-29f4545f9d52?q=80&w=1000&auto=format&fit=crop" alt="Rinder auf der Weide - Hof Geyer" class="rounded-3xl shadow-xl w-full h-80 object-cover border-4 border-white" onerror="this.src='https://placehold.co/800x600/5b3286/ffffff?text=Bio-Rind+Hof+Geyer'">
+                    <div class="absolute -bottom-6 -left-6 bg-milka-800 text-white p-5 rounded-2xl shadow-lg hidden sm:block border border-milka-600">
+                        <p class="text-sm font-bold">Hofverkauf Familie Geyer</p>
+                        <p class="text-xs text-milka-200">Reibertenrod (Alsfeld)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-16 px-4 max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 md:p-12 border border-cream-200 shadow-sm">
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <h2 class="text-3xl font-extrabold text-milka-900">Fleischpaket Vorbestellen</h2>
+                    <p class="text-gray-600 mt-2">Senden Sie Familie Geyer Ihre unverbindliche Anfrage. Wir benachrichtigen Sie zum nächsten Schlachttermin & Abholtag.</p>
+                </div>
+
+                <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Vor- & Nachname *</label>
+                            <input type="text" required class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-milka-600 focus:outline-none" placeholder="Max Mustermann">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">E-Mail-Adresse *</label>
+                            <input type="email" required class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-milka-600 focus:outline-none" placeholder="max@beispiel.de">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Telefonnummer</label>
+                            <input type="tel" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-milka-600 focus:outline-none" placeholder="0170 12345678">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Gewünschtes Paket *</label>
+                            <select id="packageSelect" required class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-milka-600 focus:outline-none bg-white">
+                                <option value="Probierpaket 3kg">Probierpaket ca. 3 kg</option>
+                                <option value="Mischpaket 5kg">Mischpaket ca. 5 kg</option>
+                                <option value="Familienpaket 10kg">Familienpaket ca. 10 kg</option>
+                                <option value="Gourmet Steak-Paket">Gourmet Steak-Paket (ca. 4 kg)</option>
+                                <option value="Schmor- & Suppenpaket">Schmor- & Suppenpaket (ca. 6 kg)</option>
+                                <option value="Sonderwunsch / Einzelteile">Sonderwunsch / Einzelteile</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Anmerkungen oder Fragen</label>
+                        <textarea rows="3" class="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-milka-600 focus:outline-none" placeholder="Besondere Wünsche, Abholzeiten oder Fragen an Familie Geyer..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-milka-700 hover:bg-milka-800 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-milka-700/20 text-lg flex justify-center items-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i> Unverbindlich Vorbestellen
+                    </button>
+                </form>
+
+                <div id="successMsg" class="hidden mt-6 bg-milka-50 border border-milka-200 text-milka-900 p-5 rounded-2xl text-center">
+                    <p class="font-extrabold text-lg">Vielen Dank für Ihre Bestellung!</p>
+                    <p class="text-sm mt-1 text-gray-700">Familie Geyer hat Ihre Anfrage erhalten und meldet sich in Kürze mit allen Details zur Abholung in Alsfeld-Reibertenrod bei Ihnen.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-milka-900 text-white py-12 px-4 mt-auto border-t border-milka-800">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-3 flex items-center gap-2 text-milka-100">
+                    <i data-lucide="beef" class="w-5 h-5"></i> Bio-Rindfleisch Hof Geyer
+                </h4>
+                <p class="text-milka-200 text-sm leading-relaxed">
+                    Ihr lokaler Partner für nachhaltiges, erstklassiges Bio-Rindfleisch direkt aus Alsfeld-Reibertenrod im Vogelsberg.
+                </p>
+            </div>
+            <div>
+                <h5 class="font-bold text-milka-100 mb-3">Abholung & Ort</h5>
+                <p class="text-milka-200 text-sm leading-relaxed">
+                    Familie Geyer<br>
+                    36304 Alsfeld-Reibertenrod<br>
+                    Vogelsbergkreis, Hessen
+                </p>
+            </div>
+            <div>
+                <h5 class="font-bold text-milka-100 mb-3">Als PWA-App nutzen</h5>
+                <p class="text-milka-200 text-sm mb-3">
+                    Speichern Sie unsere Seite als App direkt auf Ihrem Smartphone-Bildschirm.
+                </p>
+                <button onclick="installPWA()" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2">
+                    <i data-lucide="smartphone" class="w-4 h-4"></i> Auf Smartphone installieren
+                </button>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto border-t border-milka-800 mt-8 pt-6 text-center text-xs text-milka-200">
+            © <script>document.write(new Date().getFullYear())</script> Bio-Rindfleisch Hof Geyer Reibertenrod. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function selectPackage(pkgName) {
+            const select = document.getElementById('packageSelect');
+            if(select) {
+                select.value = pkgName;
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('orderForm');
+            const msg = document.getElementById('successMsg');
+            
+            form.reset();
+            msg.classList.remove('hidden');
+            msg.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- PWA Logic & Service Worker Registration ---
+        let deferredPrompt;
+        const pwaBtn = document.getElementById('pwaInstallBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (pwaBtn) pwaBtn.classList.remove('hidden');
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('Tipp: Öffnen Sie das Browser-Menü Ihres Smartphones und wählen Sie "Zum Home-Bildschirm hinzufügen".');
+            }
+        }
+
+        const manifestData = {
+            "name": "Bio-Rind Hof Geyer",
+            "short_name": "Hof Geyer",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#5b3286",
+            "theme_color": "#5b3286",
+            "description": "Bio-Rindfleisch von Familie Geyer aus Alsfeld-Reibertenrod.",
+            "icons": [
+                {
+                    "src": "https://cdn-icons-png.flaticon.com/512/3058/3058995.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const stringManifest = JSON.stringify(manifestData);
+        const blob = new Blob([stringManifest], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(blob);
+        const manifestLink = document.createElement('link');
+        manifestLink.rel = 'manifest';
+        manifestLink.href = manifestURL;
+        document.head.appendChild(manifestLink);
+
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+                self.addEventListener('install', (e) => self.skipWaiting());
+                self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => caches.match(e.request))));
+            `;
+            const swBlob = new Blob([swCode], { type: 'text/javascript' });
+            const swUrl = URL.createObjectURL(swBlob);
+            navigator.serviceWorker.register(swUrl).catch(err => console.log('SW setup skipped'));
+        }
+    </script>
+</body>
+</html>
+```
